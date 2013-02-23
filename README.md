@@ -11,11 +11,12 @@ How to use
 
 For now, API is very easy:
 
-joy = VideopackJoy()
-joy.open()
-state = joy.state
-joy.close()
-
+```python
+ joy = VideopackJoy()
+ joy.open()
+ state = joy.state
+ joy.close()
+```
 
 How to connect
 ==============
