@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 #
 
-import RPi.GPIO as GPIO
+try:
+    import RPi.GPIO as GPIO
+except:
+    print 'WARNING: using DUMMY GPIO emulation'
+    import gpio_mock as GPIO
 
 import joystick
 
@@ -12,7 +16,7 @@ _W_YELLOW = 7
 _W_ORANGE = 8
 _W_RED = 10
 
-class VideopackJoy(joystick.Joystick)
+class VideopackJoy(joystick.Joystick):
     def __init__(self):
         joystick.Joystick.__init__(self)
         self.__opened = False
